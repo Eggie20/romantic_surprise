@@ -1,0 +1,551 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdf1f4 0%, #fce4ec 50%, #f8bbd9 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Phase Management */
+.phase {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.phase.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #e91e63;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.phase-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e91e63;
+}
+
+/* Phase 1: Welcome Message */
+.welcome-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.typewriter-container {
+    margin: 2rem 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: left;
+    max-width: 600px;
+    border-right: 2px solid #e91e63;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+/* Phase 2: Slideshow */
+.slideshow-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 2rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.memory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slideshow-controls {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(233, 30, 99, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e91e63, #f06292);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.slide-counter {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Phase 3: Love Book */
+.book-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-container {
+    margin: 3rem 0;
+    perspective: 1000px;
+}
+
+.book {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+.book:hover {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e91e63, #f06292, #f48fb1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><text x="10" y="15" text-anchor="middle" fill="rgba(255,255,255,0.1)" font-size="12">♥</text></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+    opacity: 0.3;
+}
+
+.book-cover h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    position: relative;
+}
+
+.book-cover p {
+    font-size: 1.1rem;
+    z-index: 1;
+    position: relative;
+}
+
+/* Book Modal */
+.book-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.book-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.book-pages {
+    min-height: 300px;
+    position: relative;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
+.page-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.page-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #e91e63;
+}
+
+.page-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.book-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.page-btn {
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background: #c2185b;
+    transform: translateY(-2px);
+}
+
+.page-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#page-counter {
+    font-weight: 500;
+    color: #666;
+}
+
+.close-btn {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #555;
+}
+
+.final-message {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.signature {
+    font-size: 1.3rem;
+    color: #e91e63;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #666;
+    font-style: italic;
+}
+
+/* Buttons */
+.next-btn {
+    background: linear-gradient(135deg, #e91e63, #f06292);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+    margin-top: 2rem;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.4);
+}
+
+.next-btn.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .phase-title {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-card {
+        padding: 2rem;
+    }
+    
+    .typewriter {
+        font-size: 1rem;
+    }
+    
+    .slideshow-wrapper {
+        height: 350px;
+    }
+    
+    .slide-caption {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .book {
+        width: 250px;
+        height: 320px;
+    }
+    
+    .book-cover h3 {
+        font-size: 1.5rem;
+    }
+    
+    .book-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .page-content {
+        padding: 1.5rem;
+    }
+    
+    .page-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .page-content p {
+        font-size: 1rem;
+    }
+    
+    .book-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-card {
+        padding: 1.5rem;
+    }
+    
+    .typewriter {
+        font-size: 0.9rem;
+    }
+    
+    .slideshow-wrapper {
+        height: 280px;
+    }
+    
+    .slide-caption {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+    
+    .book {
+        width: 200px;
+        height: 260px;
+    }
+    
+    .book-cover h3 {
+        font-size: 1.3rem;
+    }
+    
+    .book-cover p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.welcome-card {
+    animation: fadeInUp 1s ease-out;
+}
+
+.book:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Loading States */
+.memory-image {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+.memory-image[src] {
+    background: none;
+    animation: none;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+.book:focus {
+    outline: 3px solid #e91e63;
+    outline-offset: 2px;
+}

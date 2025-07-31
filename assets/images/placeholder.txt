@@ -1,0 +1,32 @@
+Memory Photos Placeholder
+
+Place your 10 memory photos here:
+- memory1.jpg
+- memory2.jpg
+- memory3.jpg
+- memory4.jpg
+- memory5.jpg
+- memory6.jpg
+- memory7.jpg
+- memory8.jpg
+- memory9.jpg
+- memory10.jpg
+
+Photo Guidelines:
+- Use JPG or PNG format
+- Recommended size: 800x600 pixels or higher
+- Mix of portrait and landscape orientations is fine
+- The app will automatically resize and crop photos to fit
+- Choose your most meaningful relationship memories
+
+Each photo will display with these captions:
+1. "In every moment, I feel your love."
+2. "Your smile makes the hardest days better."
+3. "You are my home."
+4. "From strangers to soulmates."
+5. "Each memory is a piece of forever."
+6. "Even in silence, I feel your care."
+7. "Thank you for growing with me."
+8. "5 months — yet it feels like I've known you forever."
+9. "You're my sunshine after every storm."
+10. "Our memories will always bloom in my heart."

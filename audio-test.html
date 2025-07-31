@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>🎵 Audio Test Page</h1>
+    <p>This page will help us test if your music files are working properly.</p>
+
+    <div class="test-section">
+        <h2>Test 1: Direct Audio Controls</h2>
+        <p>Try playing each audio file directly:</p>
+        
+        <h3>Umagang Kay Ganda (Phase 1)</h3>
+        <audio controls>
+            <source src="assets/music/Umagang_Kay_Ganda.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h3>Nakakapagtataka (Phase 2)</h3>
+        <audio controls>
+            <source src="assets/music/Nakakapagtataka.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h3>Ewan (Phase 3)</h3>
+        <audio controls>
+            <source src="assets/music/Ewan.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: JavaScript Audio Control</h2>
+        <button onclick="testAudio('Umagang_Kay_Ganda')">Play Phase 1 Music</button>
+        <button onclick="testAudio('Nakakapagtataka')">Play Phase 2 Music</button>
+        <button onclick="testAudio('Ewan')">Play Phase 3 Music</button>
+        <button onclick="stopAllAudio()">Stop All</button>
+        
+        <div id="status" class="status info">Click a button to test audio playback</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Browser Audio Support</h2>
+        <div id="browser-support"></div>
+    </div>
+
+    <script>
+        let currentAudio = null;
+
+        function updateStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+        }
+
+        function testAudio(filename) {
+            try {
+                // Stop current audio if playing
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+
+                // Create new audio element
+                currentAudio = new Audio(`assets/music/${filename}.m4a`);
+                currentAudio.volume = 0.5;
+
+                // Add event listeners
+                currentAudio.addEventListener('loadstart', () => {
+                    updateStatus(`Loading ${filename}...`, 'info');
+                });
+
+                currentAudio.addEventListener('canplay', () => {
+                    updateStatus(`${filename} loaded successfully!`, 'success');
+                });
+
+                currentAudio.addEventListener('playing', () => {
+                    updateStatus(`${filename} is now playing!`, 'success');
+                });
+
+                currentAudio.addEventListener('error', (e) => {
+                    updateStatus(`Error loading ${filename}: ${e.message}`, 'error');
+                    console.error('Audio error:', e);
+                });
+
+                // Try to play
+                currentAudio.play().then(() => {
+                    updateStatus(`${filename} started playing successfully!`, 'success');
+                }).catch(error => {
+                    updateStatus(`Failed to play ${filename}: ${error.message}`, 'error');
+                    console.error('Play error:', error);
+                });
+
+            } catch (error) {
+                updateStatus(`JavaScript error: ${error.message}`, 'error');
+                console.error('Test error:', error);
+            }
+        }
+
+        function stopAllAudio() {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                updateStatus('Audio stopped', 'info');
+            }
+        }
+
+        // Check browser audio support
+        function checkBrowserSupport() {
+            const audio = document.createElement('audio');
+            const supportDiv = document.getElementById('browser-support');
+            
+            const formats = [
+                { ext: 'm4a', mime: 'audio/mp4' },
+                { ext: 'mp3', mime: 'audio/mpeg' },
+                { ext: 'ogg', mime: 'audio/ogg' },
+                { ext: 'wav', mime: 'audio/wav' }
+            ];
+
+            let supportInfo = '<h3>Audio Format Support:</h3><ul>';
+            
+            formats.forEach(format => {
+                const canPlay = audio.canPlayType(format.mime);
+                const support = canPlay === 'probably' ? '✅ Full Support' : 
+                               canPlay === 'maybe' ? '⚠️ Partial Support' : 
+                               '❌ Not Supported';
+                supportInfo += `<li><strong>${format.ext.toUpperCase()}</strong> (${format.mime}): ${support}</li>`;
+            });
+            
+            supportInfo += '</ul>';
+            supportDiv.innerHTML = supportInfo;
+        }
+
+        // Run browser support check when page loads
+        document.addEventListener('DOMContentLoaded', checkBrowserSupport);
+    </script>
+</body>
+</html>

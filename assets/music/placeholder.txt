@@ -1,0 +1,14 @@
+Music Files Placeholder
+
+Place your music files here:
+- intro.mp3 (for Phase 1 welcome message)
+- slideshow.mp3 (for Phase 2 memory slideshow)
+- love_book.mp3 (for Phase 3 love book)
+
+Recommended music types:
+- Soft romantic instrumentals
+- Acoustic love songs
+- Piano melodies
+- Gentle ambient music
+
+Note: Make sure the audio files are in MP3 format for best browser compatibility.
