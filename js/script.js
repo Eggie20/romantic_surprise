@@ -16,7 +16,7 @@ Gusto nako i-share ni nga surprise nimo, apay ta daytoy ket talaga nga para kenk
 Lima na ka bulan puno sa kalipay ug kasakit, ngem napintas dagiti naipundar a memories.
 
 Karon nga orasa, medyo advance gamay, mga alas 5-6 sa buntag.
-Kabalo ko nga mutindog na ka para sa trabaho, ug ako pud magsugod na og OJT karon tuiga.
+Kabalo ko nga mobangon ka sa kanah na oras para mo trabaho, ug ako na always ga hulat sa imong goodmorning.
 
 Pero isip imong uyab sa lima ka bulan…
 
