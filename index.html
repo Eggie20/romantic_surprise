@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for You ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Phase 1: Welcome Message -->
+    <div id="phase1" class="phase active"<div class="container">
+            <div class="welcome-card">
+                <h1 class="main-title">For My Beautiful Girlfriend ❤️</h1>
+                <div class="typewriter-container">
+                    <p id="typewriter-text" class="typewriter"></p>
+                </div>
+                <button id="next-phase1" class="next-btn hidden">Continue to Our Memories 💕</button>
+            </div>
+        </div>
+        <audio id="intro-music" loop>
+            <source src="assets/music/Umagang_Kay_Ganda.m4a" type="audio/mp4">
+        </audio>
+    </div>
+
+    <!-- Phase 2: Memory Slideshow -->
+    <div id="phase2" class="phase">
+        <div class="container">
+            <div class="slideshow-container">
+                <h2 class="phase-title">Our Beautiful Memories 📸</h2>
+                <div class="slideshow-wrapper">
+                    <div class="slide active">
+                        <img src="assets/images/First-in-your-place.jpg" alt="First in your place" class="memory-image">
+                        <div class="slide-caption">Ang unang higayon nga naa ko sa inyong balay diin gipaila-ila ko nimo sa imong pamilya sa pormal nga paagi.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/First-Snack-With-You.jpg" alt="First snack together" class="memory-image">
+                        <div class="slide-caption">Ang atong unang pagkaon-kauban yano nga mga higayon nga adunay dakong kahulugan para sa duha ka magtiayon.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Funny-Moments.jpg" alt="Funny moments" class="memory-image">
+                        <div class="slide-caption">Ang imong katawa maoy akong geh pangitah ug favorite Langga.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Job-Interview-With-You.jpg" alt="Job interview support" class="memory-image">
+                        <div class="slide-caption">Nagtinabangay ta sa matag importante nga memories sa atong kinabuhi.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Pa-Dagat-With-Friends.jpg" alt="Beach with friends" class="memory-image">
+                        <div class="slide-caption">Making memories by the sea with the people we love.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Spice-Pic.jpg" alt="Spice moments" class="memory-image">
+                        <div class="slide-caption">Adding spice to our beautiful relationship.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Sweetness-Overload.jpg" alt="Sweet moments" class="memory-image">
+                        <div class="slide-caption">Sobrang katam-is kasla ti riknak iti puso gapu kenka.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/Work.jpg" alt="Work moments" class="memory-image">
+                        <div class="slide-caption">Bisan pa sa imong pagkabusy sa trabaho, permi ko naghulat sa imong tubag adlaw-adlaw.</div>
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="slide-counter">1 / 8</p>
+                </div>
+                <button id="next-phase2" class="next-btn hidden">Open My Love Letter 💌</button>
+            </div>
+        </div>
+        <audio id="slideshow-music" loop>
+            <source src="assets/music/slideshow.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Phase 3: Interactive Love Book -->
+    <div id="phase3" class="phase">
+        <div class="container">
+            <div class="book-section">
+                <h2 class="phase-title">A Letter From My Heart 💝</h2>
+                <div class="book-container">
+                    <div id="love-book" class="book">
+                        <div class="book-cover">
+                            <h3>My Love for You</h3>
+                            <p>Click to open ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book Pages Modal -->
+                <div id="book-modal" class="book-modal">
+                    <div class="book-content">
+                        <div class="book-pages">
+                            <div class="page active">
+                                <div class="page-content">
+                                    <h4>Page 1</h4>
+                                    <p>I love you first. Before anything else, it was always you. the love that i been waiting for and the person i truly love more than myself </p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 2</h4>
+                                    <p>Thank you for the love that made me feel special when I felt empty. you make me fell like there's a lot of love in me.</p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 3</h4>
+                                    <p>At first you have doubts about me and it's your decision and I understand. From the start, I knew… and still, I still love you and I will always love you forever i think im too obsessed about you for you.</p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 4</h4>
+                                    <p>
+                                        Can you promise me that you will be my last..? I already promised myself, I dont want to start over everything with a new person again, if anything happens between us, we will fix it!!
+                                        I just want you to be with me forever
+                                        You changed my life when I was at my lowest.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 5</h4>
+                                    <p>I admire your love for your family, your strength, your heart, and god. i know you been in every other religion for that i respect it and i glad you find it that you make you comfortable</p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 6</h4>
+                                    <p>I know this is your first relationship that you unexpected to find and i know you still doubts on me and I know it's not easy to trust.</p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 7</h4>
+                                    <p>But my love for you is honest, patient, and real. Langga I love you more than anything else in the world.</p>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <div class="page-content">
+                                    <h4>Page 8</h4>
+                                    <p>With every beat of my heart, I love you with no doubts. 💗 Happy Girlfriend Day My Langga/Jessel/Jenjen/</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-navigation">
+                            <button id="prev-page" class="page-btn">← Previous</button>
+                            <span id="page-counter">1 / 8</span>
+                            <button id="next-page" class="page-btn">Next →</button>
+                        </div>
+                        <button id="close-book" class="close-btn">Close Book</button>
+                    </div>
+                </div>
+                
+                <div class="final-message">
+                    <p class="signature">Forever yours, Hubby/Arnel/Eggie 💞</p>
+                    <p class="date">August 1, 2025</p>
+                </div>
+            </div>
+        </div>
+        <audio id="book-music" loop>
+            <source src="assets/music/love_book.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
